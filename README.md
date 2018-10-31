@@ -8,9 +8,9 @@ Things you may want to cover:
 
 ### Features
 
--Real time chat engines
--Blogs
--Portfolio
+- Real time chat engines
+- Blogs
+- Portfolio
 
 ### Code Example
 
