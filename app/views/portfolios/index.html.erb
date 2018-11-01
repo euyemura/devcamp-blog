@@ -4,6 +4,6 @@
   <p><%= item.subtitle %></p>
   <p><%= item.body %> </p>
   <p><%= item.main_image %></p>
-  <p><%= image_tag item.thumb_image %></p>
+  <p><%= image_tag item.thumb_image if item.thumb_image%></p>
 
 <% end %>
