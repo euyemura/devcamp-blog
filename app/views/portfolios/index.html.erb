@@ -5,7 +5,8 @@
 <%= link_to "Create a new portfolio bitch", new_portfolio_path %>
 
 <% @portfolio_items.each do |item| %>
-  <h4><%= item.title %></h4>
+  <h2><%= link_to item.title,
+  portfolio_path(item.id) %></h2>
   <p><%= item.subtitle %></p>
   <p><%= item.body %> </p>
   <p><%= item.main_image %></p>

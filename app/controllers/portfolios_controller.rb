@@ -4,6 +4,11 @@ class PortfoliosController < ApplicationController
     #the above allows us to make the portfolio items avaialable to view.
   end
 
+  def show
+    @portfolio_item = Portfolio.find(params[:id])
+  end 
+
+
   def new
     @portfolio_item = Portfolio.new
   end
