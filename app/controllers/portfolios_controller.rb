@@ -6,7 +6,7 @@ class PortfoliosController < ApplicationController
 
   def show
     @portfolio_item = Portfolio.find(params[:id])
-  end 
+  end
 
 
   def new
@@ -41,6 +41,18 @@ def update
       format.html { render :edit }
       # format.json { render json: @portfolio_item.errors, status: :unprocessable_entity }
     end
+  end
+end
+
+def destroy
+  #perform the lookup
+    @portfolio_item = Portfolio.find(params[:id])
+    #destroy the record
+    @portfolio_item.destroy
+
+  #respond to is just saying what you want to happen assuming the destruction was successful.
+  respond_to do |format|
+    format.html { redirect_to portfolios_url, notice: 'Portfolio item was successfully destroyed.' }
   end
 end
 
