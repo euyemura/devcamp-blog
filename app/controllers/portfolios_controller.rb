@@ -14,12 +14,29 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: "Portfolio was successfully created. You're very talented." }
-        # format.json { render :show, status: :created, location: @portfolio_item }
       else
         format.html { render :new }
-        # format.json { render json: @portfolio_item.errors, status: :unprocessable_entity }
       end
     end
   end
+
+def edit
+  @portfolio_item = Portfolio.find(params[:id])
+  #the route is expecting something called 'id' inside of its params, so give it to it.
+end
+
+def update
+
+  @portfolio_item = Portfolio.find(params[:id])
+  respond_to do |format|
+    if @portfolio_item.update(params.require(:portfolio).permit(:title, :subtitle, :body))
+      format.html { redirect_to portfolios_path, notice: 'Your portfolio edition was edited.. get it?' }
+      # format.json { render :show, status: :ok, location: @portfolio_item }
+    else
+      format.html { render :edit }
+      # format.json { render json: @portfolio_item.errors, status: :unprocessable_entity }
+    end
+  end
+end
 
 end
