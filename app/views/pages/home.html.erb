@@ -2,7 +2,10 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <h1>Blogs</h1>
+<h2><%= link_to 'This is my Blog tho',
+blogs_path%></h2>
 <%= @posts.inspect %>
+
 
 <h1>Skills</h1>
 <%= @skills.inspect %>
